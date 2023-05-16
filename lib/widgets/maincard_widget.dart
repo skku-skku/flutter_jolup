@@ -18,10 +18,10 @@ class MainCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const DetailScreen(
-                // title: title,
-                // date: date,
-                ),
+            builder: (context) => DetailScreen(
+              title: title,
+              date: date,
+            ),
           ),
         );
       },
