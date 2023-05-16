@@ -17,6 +17,11 @@ class _HomeScreenState extends State<HomeScreen> {
     const UploadScreen(),
   ];
 
+  final List<String> _titleOptions = <String>[
+    '일정',
+    '업로드',
+  ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -28,9 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFF9F9F9),
       appBar: AppBar(
-        title: const Text(
-          '일정',
-          style: TextStyle(
+        title: Text(
+          _titleOptions.elementAt(_selectedIndex),
+          style: const TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 23,
           ),
