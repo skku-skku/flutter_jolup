@@ -3,35 +3,33 @@ import 'package:jolup/screens/meeting_screen.dart';
 import 'package:jolup/screens/qna_screen.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({super.key});
+  final String title, date;
 
-//   final String title, date;
-
-//   const DetailScreen({
-//     super.key,
-//     required this.title,
-//     required this.date,
-//   });
+  const DetailScreen({
+    super.key,
+    required this.title,
+    required this.date,
+  });
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      initialIndex: 1,
+      initialIndex: 0,
       length: 2,
       child: Scaffold(
         backgroundColor: const Color(0xFFF9F9F9),
         appBar: AppBar(
           title: Column(
             children: [
-              const Text(
-                '클라이언트 1차 미팅 -1',
-                style: TextStyle(
+              Text(
+                title,
+                style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
-                '2018년 2월 3일 토요일',
+                date,
                 style: TextStyle(
                   fontSize: 18,
                   color: Theme.of(context).textTheme.displayLarge!.color,
